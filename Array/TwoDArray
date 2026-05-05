@@ -1,0 +1,44 @@
+import java.util.Random;
+public class twoDArray {
+    public static void main(String[] args){
+        //初始化数组
+        int[][] arr=new int[4][4];
+        int num=0;
+
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                arr[i][j]=num++;
+            }
+        }
+
+        printArray(arr);
+
+        //随机交换数组
+        randomChange(arr);
+
+        printArray(arr);
+    }
+
+    public static void printArray(int[][] array){
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                System.out.print(array[i][j]+"\t");//这个\t让排版更加整齐
+            }
+            System.out.println();
+        }
+    }
+
+    public static void randomChange(int[][] array){
+        Random rd=new Random();
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                int a=rd.nextInt(array.length);
+                int b=rd.nextInt(array.length);
+
+                int temp=array[i][j];
+                array[i][j]=array[a][b];
+                array[a][b]=temp;
+            }
+        }
+    }
+}
