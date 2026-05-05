@@ -1,0 +1,29 @@
+public class PrimeNumbers {
+    public static void main(String[] args){
+        int cnt=0;
+        for(int i=1;i<1000;i++){
+            if(isPrime(i)){
+                cnt++;
+                System.out.print(i+"\t");
+                if(cnt%10==0){
+                    System.out.println();
+                }
+            }
+        }
+    }
+
+    public static boolean isPrime(int i){
+        if(i<=1){
+            return false;
+        }
+
+        // j从2开始，到根号n结束
+        for(int j=2;j<=Math.sqrt(i);j++){
+            if(i%j==0){
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
