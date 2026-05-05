@@ -1,27 +1,32 @@
 import java.util.Random;
-public class twoDArray {
+public class twoDArray {// 类名：TwoDArray【大驼峰（Java 官方规范）】
+
+    // 常量定义：把固定数字抽出来，方便修改（4x4 → 想改大小只改这里）
+    private static final int SIZE = 4;
     public static void main(String[] args){
         //初始化数组
-        int[][] arr=new int[4][4];
+        int[][] arr = new int[SIZE][SIZE];
         int num=0;
 
-        for(int i=0;i<4;i++){
-            for(int j=0;j<4;j++){
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[i].length;j++){
                 arr[i][j]=num++;
             }
         }
 
+        System.out.println("===== 交换前 =====");
         printArray(arr);
 
         //随机交换数组
         randomChange(arr);
 
+        System.out.println("\n===== 交换后 =====");
         printArray(arr);
     }
 
     public static void printArray(int[][] array){
-        for(int i=0;i<4;i++){
-            for(int j=0;j<4;j++){
+        for(int i=0;i<array.length;i++){
+            for(int j=0;j<array[i].length;j++){
                 System.out.print(array[i][j]+"\t");//这个\t让排版更加整齐
             }
             System.out.println();
@@ -30,8 +35,8 @@ public class twoDArray {
 
     public static void randomChange(int[][] array){
         Random rd=new Random();
-        for(int i=0;i<4;i++){
-            for(int j=0;j<4;j++){
+        for(int i=0;i<array.length;i++){
+            for(int j=0;j<array[i].length;j++){
                 int a=rd.nextInt(array.length);
                 int b=rd.nextInt(array.length);
 
