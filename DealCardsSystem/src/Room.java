@@ -70,6 +70,21 @@ public class Room {
             }
         }
 
+        // ✅ 修复 2：排序
+        sortCard(player1);
+        sortCard(player2);
+        sortCard(player3);
+
+        // ✅ 修复 3：打印看牌
+        System.out.println("\n=== 玩家1 ===");
+        System.out.println(player1);
+        System.out.println("\n=== 玩家2 ===");
+        System.out.println(player2);
+        System.out.println("\n=== 玩家3 ===");
+        System.out.println(player3);
+        System.out.println("\n=== 底牌 ===");
+        System.out.println(dipai);
+
     }
 
     private void sortCard(List<Card> playerCards){
